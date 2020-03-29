@@ -1,16 +1,26 @@
 <template>
     <div>
-      <span>测试页面</span>
-      <Test/>
+      <Test></Test>
     </div>
 </template>
 
 <script>
-import Test from '../components/menu/tabber'
+// import { mapActions } from 'vuex'
+import Test from './../module/cj/page/cj_table'
 export default {
   name: 'test',
   components: {
-    Test
+    Test: Test
+  },
+  data () {
+    return {
+    }
+  },
+  methods: {
+    // ...mapActions(['updataQzInfo'])
+  },
+  created () {
+    // this.updataQzInfo()
   }
 }
 </script>

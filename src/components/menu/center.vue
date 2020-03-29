@@ -35,6 +35,8 @@
            >
              <GridItem icon="photo-o" text="绩点计算器"></GridItem>
              <GridItem icon="photo-o" text="成绩excel下载"></GridItem>
+             <GridItem icon="photo-o" text="重修查询"></GridItem>
+             <GridItem icon="photo-o" text="考试查询"></GridItem>
              <GridItem icon="photo-o" text="作息时间"></GridItem>
              <GridItem icon="photo-o" text="后勤问题"></GridItem>
              <GridItem icon="photo-o" text="校园电话簿"></GridItem>
@@ -67,9 +69,6 @@
          </li>
        </ul>
      </div>
-     <footer>
-
-     </footer>
    </div>
 </template>
 

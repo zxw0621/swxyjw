@@ -1,6 +1,6 @@
 <template>
     <div>
-      <router-view>123</router-view>
+      <router-view/>
       <Tabbar
         v-model="active"
         active-color="#07c160"

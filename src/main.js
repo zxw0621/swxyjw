@@ -4,6 +4,9 @@ import router from './router'
 import 'vant/lib/index.less'
 import { Lazyload } from 'vant'
 import VueWechatTitle from 'vue-wechat-title'
+import './assets/font/iconfont.css'
+import store from './store'
+import VueCookies from 'vue-cookies'
 
 Vue.config.productionTip = false
 // 图片懒加载
@@ -15,8 +18,10 @@ Vue.use(Lazyload, {
 })
 // 动态修改标题插件
 Vue.use(VueWechatTitle)
+Vue.use(VueCookies)
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')
