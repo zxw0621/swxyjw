@@ -1,7 +1,7 @@
 <template>
   <div>
     <PullRefresh v-model="isLoading" @refresh="onRefresh">
-    <header>
+    <header :style="{'backgroundImage': 'url(' + img + ')'}">
       <div id="div1">
         姓名：<span>{{$store.state.qz.userrealname}}</span>
         <br>
@@ -46,6 +46,8 @@ export default {
   data () {
     return {
       isLoading: false,
+      // img: 'http://pic.changaspl.xin/img/812af6c173cffa01ca8cafa90541d71c.jpg',
+      img: 'https://pic.gksec.com/2020/03/30/711faf0b960d0/20200330223641.png',
       cj: []
     }
   },
@@ -90,6 +92,11 @@ export default {
     }
   },
   created () {
+    Toast.loading({
+      message: '加载中...',
+      forbidClick: true,
+      duration: 'toast'
+    })
     const token = this.$store.state.qz.token
     // 简单检测token
     if (token == null || token === '-1' || String(token).length !== 128) {
@@ -108,7 +115,7 @@ export default {
     border-radius: 0.618rem;
     background-color: #fafffb;
     position: relative;
-    background-image:url("http://pic.changaspl.xin/img/812af6c173cffa01ca8cafa90541d71c.jpg");
+    /*background-image:url("http://pic.changaspl.xin/img/812af6c173cffa01ca8cafa90541d71c.jpg");*/
     background-size: 100% 100%;
   }
   /* 刷新span*/

@@ -12,8 +12,8 @@ Vue.config.productionTip = false
 // 图片懒加载
 Vue.use(Lazyload, {
   preLoad: 1.3,
-  error: 'static/img/error.jpg',
-  loading: 'static/img/loading.gif',
+  error: 'https://pic.gksec.com/2020/03/30/4025c1bea1b80/20200330221441.png',
+  loading: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2701646041,3975227449&fm=26&gp=0.jpg',
   attempt: 3
 })
 // 动态修改标题插件

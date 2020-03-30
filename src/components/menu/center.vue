@@ -7,7 +7,7 @@
          @change="onSwipeChange"
        >
          <SwipeItem v-for="(img, index) in swipeImages" :key="index">
-           <img v-lazy="img" :height="swipeImagesHeight"/>
+           <img v-lazy="img" :height="swipeImagesHeight" width="100%"/>
          </SwipeItem>
        </Swipe>
      </header>
@@ -53,10 +53,9 @@ export default {
     return {
       swipeImagesHeight: '180px',
       swipeImages: [
-        'https://img.yzcdn.cn/vant/apple-2.jpg',
-        'https://img.yzcdn.cn/vant/apple-1.jpg',
-        'https://img.yzcdn.cn/vant/apple-1.jpg',
-        'https://img.yzcdn.cn/vant/apple-2.jpg'
+        'https://pic.gksec.com/2020/03/30/d8aef160b1cfe/20200330220936.png',
+        'https://pic.gksec.com/2020/03/30/12415ff6fb901/20200330221117.png',
+        'https://pic.gksec.com/2020/03/30/b2cbc33054b2a/20200330221159.png'
       ],
       noticeBarText: '通知内容:附加按附件法律的萨克附近安防监控拉萨的风景史黛拉发了',
       gridData: []
