@@ -58,7 +58,7 @@ export default {
       setTimeout(() => {
         const params = {
           method: 'getXnxq',
-          xh: '20177583'
+          xh: this.$store.state.qz.user.useraccount
         }
         const _this = this
         qz.getQz(params, _this.$store.state.qz.token).then(res => {

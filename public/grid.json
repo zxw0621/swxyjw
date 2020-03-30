@@ -1,0 +1,42 @@
+[
+  {
+    "title": "常用",
+    "data": [
+      { "icon": "photo-o", "text": "成绩查询", "url": "/jw/cj"},
+      { "icon": "photo-o", "text": "课表查询", "url": ""},
+      { "icon": "photo-o", "text": "空教室", "url": ""}
+    ]
+  },
+  {
+    "title": "工具",
+    "data": [
+      { "icon": "photo-o", "text": "绩点计算器", "url": ""},
+      { "icon": "photo-o", "text": "成绩excel下载", "url": ""},
+      { "icon": "photo-o", "text": "重修查询", "url": ""},
+      { "icon": "photo-o", "text": "考试查询", "url": ""},
+      { "icon": "photo-o", "text": "作息时间", "url": ""},
+      { "icon": "photo-o", "text": "后勤问题", "url": ""},
+      { "icon": "photo-o", "text": "校园电话簿", "url": ""}
+    ]
+  },
+  {
+    "title": "校内",
+    "data": [
+      { "icon": "photo-o", "text": "表白墙plus", "url": ""},
+      { "icon": "photo-o", "text": "二手市场", "url": ""},
+      { "icon": "photo-o", "text": "计算机二级", "url": ""},
+      { "icon": "photo-o", "text": "CTE4/6", "url": ""},
+      { "icon": "photo-o", "text": "教务通知", "url": ""},
+      { "icon": "photo-o", "text": "校园八卦", "url": ""},
+      { "icon": "photo-o", "text": "360全景校园", "url": ""}
+    ]
+  },
+  {
+    "title": "反馈",
+    "data": [
+      { "icon": "photo-o", "text": "加入我们", "url": ""},
+      { "icon": "photo-o", "text": "需求希望", "url": ""},
+      { "icon": "photo-o", "text": "评分", "url": ""}
+    ]
+  }
+]

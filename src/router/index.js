@@ -6,6 +6,7 @@ import Letf from '../components/menu/left'
 import Center from '../components/menu/center'
 import Right from '../components/menu/right'
 import XhBind from '../views/xhBind'
+import CjTable from '../module/cj/page/cj_table'
 
 Vue.use(VueRouter)
 
@@ -22,7 +23,8 @@ const routes = [
     ]
   },
   { path: '/test', component: Test, name: '测试页面' },
-  { path: '/xhbind', component: XhBind, name: '学号绑定' }
+  { path: '/xhbind', component: XhBind, name: '学号绑定' },
+  { path: '/jw/cj', component: CjTable, name: '成绩查询' }
 ]
 
 const router = new VueRouter({
