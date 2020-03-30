@@ -88,6 +88,7 @@ export default {
           // 待完成
           // 路由跳转
           const url = this.$cookies.get('re_url')
+          this.$cookies.remove('re_url')
           console.log(location.host)
           if (url == null) {
             window.location.href = '/'

@@ -9,75 +9,25 @@
       </div>
       <span class="iconfont icon-shuaxin pull">下拉刷新</span>
     </header>
-    <table>
-      <tr>
-        <td colspan="4">2019-2020-1学期</td>
-      </tr>
-      <tr>
-        <th>课程</th>
-        <th>成绩</th>
-        <th>绩点</th>
-        <th>学分</th>
-      </tr>
-      <tr>
-        <td>1-1</td>
-        <td>1-2</td>
-        <td>1-3</td>
-        <td>1-3</td>
-      </tr>
-      <tr>
-        <td>1-1</td>
-        <td>1-2</td>
-        <td>1-3</td>
-        <td>1-3</td>
-      </tr>
-    </table>
-    <table>
-      <tr>
-        <td colspan="4">2019-2020-1学期</td>
-      </tr>
-      <tr>
-        <th>课程</th>
-        <th>成绩</th>
-        <th>绩点</th>
-        <th>学分</th>
-      </tr>
-      <tr>
-        <td>1-1</td>
-        <td>1-2</td>
-        <td>1-3</td>
-        <td>1-3</td>
-      </tr>
-      <tr>
-        <td>1-1</td>
-        <td>1-2</td>
-        <td>1-3</td>
-        <td>1-3</td>
-      </tr>
-    </table>
-    <table>
-      <tr>
-        <td colspan="4">2019-2020-1学期</td>
-      </tr>
-      <tr>
-        <th>课程</th>
-        <th>成绩</th>
-        <th>绩点</th>
-        <th>学分</th>
-      </tr>
-      <tr>
-        <td>1-1</td>
-        <td>1-2</td>
-        <td>1-3</td>
-        <td>1-3</td>
-      </tr>
-      <tr>
-        <td>1-1</td>
-        <td>1-2</td>
-        <td>1-3</td>
-        <td>1-3</td>
-      </tr>
-    </table>
+      <div v-for="(table, index) in cj" :key="index">
+        <table v-if="table!=null&&table.result!=null&&table.result.length!=0">
+          <tr>
+            <td colspan="4">{{table.result[0].xqmc}}学期</td>
+          </tr>
+          <tr>
+            <th>课程</th>
+            <th>成绩</th>
+            <th>绩点</th>
+            <th>学分</th>
+          </tr>
+          <tr v-for="(val, ind) in table.result" :key="ind">
+            <td>{{String(val.kcmc).length > 11 ? val.kcmc.substring(0,10)+'...' : val.kcmc}}</td>
+            <td>{{val.zcj}}</td>
+            <td>{{isNaN(val.zcj)?val.zcj:((parseInt(val.zcj)-60)>=0 ?( (val.zcj-60)/10+1).toFixed(1):0)}}</td>
+            <td>{{val.xf}}</td>
+          </tr>
+        </table>
+      </div>
     </PullRefresh>
   </div>
 </template>
@@ -85,6 +35,7 @@
 <script>
 import { Toast, PullRefresh } from 'vant'
 import { mapActions } from 'vuex'
+import * as qz from './../../../api/qz'
 export default {
   name: 'cj_table',
   components: {
@@ -94,17 +45,47 @@ export default {
   },
   data () {
     return {
-      count: 0,
-      isLoading: false
+      isLoading: false,
+      cj: []
     }
   },
   methods: {
     ...mapActions(['updataQzInfo']),
     onRefresh () {
+      this.updataCj()
+    },
+    updataCj () {
       setTimeout(() => {
-        Toast('刷新成功')
-        this.isLoading = false
-        this.count++
+        const params = {
+          method: 'getXnxq',
+          xh: '20177583'
+        }
+        const _this = this
+        qz.getQz(params, _this.$store.state.qz.token).then(res => {
+          if (res.token != null && res.token === '-1') {
+            console.log('token过期，updataqzinfo更新了数据')
+            this.updataQzInfo()
+            return
+          }
+          // 如果token过期
+          for (let i = 0; i < 8; i++) {
+            const xqid = res[i].xnxq01id
+            const params2 = {
+              method: 'getCjcx',
+              xh: this.$store.state.qz.user.useraccount,
+              xnxqid: xqid
+            };
+            // 通过学期id查询成绩
+            (function (i) {
+              qz.getQz(params2, _this.$store.state.qz.token).then(res => {
+                // _this.cj[i] = res
+                _this.$set(_this.cj, i, res)
+              })
+            })(i)
+          }
+          Toast('更新成功')
+          this.isLoading = false
+        })
       }, 1000)
     }
   },
@@ -115,6 +96,7 @@ export default {
       console.log('updataqzinfo更新了数据')
       this.updataQzInfo()
     }
+    this.updataCj()
   }
 }
 </script>

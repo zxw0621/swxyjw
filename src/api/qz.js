@@ -6,6 +6,6 @@ export const getQzInfo = (params) => {
   return http.requestGet(url, { params: params })
 }
 
-export const getByQz = (params, token) => {
+export const getQz = (params, token) => {
   return http.requestGet(url, { params: params, headers: { token: token } })
 }
