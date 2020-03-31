@@ -68,7 +68,6 @@ export default {
   },
   created () {
     axios.get('../../grid.json').then(res => {
-      console.log(res.data)
       this.gridData = res.data
     }, res => {
       console.log('error')

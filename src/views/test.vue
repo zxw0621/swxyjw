@@ -6,8 +6,7 @@
 
 <script>
 // import { mapActions } from 'vuex'
-import Test from './../module/cj/page/cj_table'
-import axios from 'axios'
+import Test from './../module/nulljs/findIndex'
 export default {
   name: 'test',
   components: {
@@ -20,11 +19,6 @@ export default {
   methods: {
   },
   created () {
-    axios.get('../../grid.json').then(res => {
-      console.log(res.data)
-    }, res => {
-      console.log('error')
-    })
   }
 }
 </script>

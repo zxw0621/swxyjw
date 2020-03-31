@@ -21,7 +21,7 @@
             <th>学分</th>
           </tr>
           <tr v-for="(val, ind) in table.result" :key="ind">
-            <td>{{String(val.kcmc).length > 11 ? val.kcmc.substring(0,10)+'...' : val.kcmc}}</td>
+            <td>{{String(val.kcmc).length > 11 ? val.kcmc.substring(0,10)+'···' : val.kcmc}}</td>
             <td>{{val.zcj}}</td>
             <td>{{isNaN(val.zcj)?val.zcj:((parseInt(val.zcj)-60)>=0 ?( (val.zcj-60)/10+1).toFixed(1):0)}}</td>
             <td>{{val.xf}}</td>

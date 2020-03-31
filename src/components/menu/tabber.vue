@@ -10,20 +10,20 @@
         <TabbarItem icon="search" to="center">教务</TabbarItem>
         <TabbarItem icon="friends-o" to="right">mi</TabbarItem>
       </Tabbar>
-      <!--底部 footer -->
-      <Footer/>
+      <!-- 底部 footer -->
+      <Foo/>
     </div>
 </template>
 
 <script>
 import { Tabbar, TabbarItem } from 'vant'
-import Footer from '../footer'
+import Foo from '../foo'
 export default {
   name: 'tabber',
   components: {
     Tabbar,
     TabbarItem,
-    Footer
+    Foo
   },
   data () {
     return {

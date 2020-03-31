@@ -99,7 +99,6 @@ export default {
           // 提示错误
           Toast.clear()
           Toast.fail('账号或密码错误！')
-          this.xh = ''
           this.pwd = ''
         }
       })
