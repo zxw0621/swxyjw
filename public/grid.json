@@ -4,7 +4,7 @@
     "data": [
       { "icon": "photo-o", "text": "成绩查询", "url": "/jw/cj"},
       { "icon": "photo-o", "text": "课表查询", "url": ""},
-      { "icon": "photo-o", "text": "空教室", "url": ""}
+      { "icon": "photo-o", "text": "空教室", "url": "/nulljs/form"}
     ]
   },
   {

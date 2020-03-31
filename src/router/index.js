@@ -7,6 +7,8 @@ import Center from '../components/menu/center'
 import Right from '../components/menu/right'
 import XhBind from '../views/xhBind'
 import CjTable from '../module/cj/page/cj_table'
+import FindIndex from '../module/nulljs/findIndex'
+import JsTable from '../module/nulljs/jsTable'
 
 Vue.use(VueRouter)
 
@@ -24,7 +26,9 @@ const routes = [
   },
   { path: '/test', component: Test, name: '测试页面' },
   { path: '/xhbind', component: XhBind, name: '学号绑定' },
-  { path: '/jw/cj', component: CjTable, name: '成绩查询' }
+  { path: '/jw/cj', component: CjTable, name: '成绩查询' },
+  { path: '/nulljs/form', component: FindIndex, name: '空教室查询' },
+  { path: '/nulljs/table', component: JsTable, name: '空教室详情' }
 ]
 
 const router = new VueRouter({

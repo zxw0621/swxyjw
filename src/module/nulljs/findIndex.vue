@@ -94,24 +94,37 @@ export default {
         showPicker: false,
         keyId: '',
         columns: [
-          { keyId: 2, text: '测试1' },
-          { keyId: 10, text: '测试2' },
-          { keyId: 31, text: '测试3' }
+          { keyId: 'allday', text: '全天' },
+          { keyId: '0104', text: '上午' },
+          { keyId: '0508', text: '下午' },
+          { keyId: '0102', text: '1-2节' },
+          { keyId: '0304', text: '3-4节' },
+          { keyId: '0506', text: '5-6节' },
+          { keyId: '0708', text: '7-8节' }
         ]
       },
       jxl: {
         value: '',
         showPicker: false,
         columns: [
-          { keyId: 2, text: '测试1' },
-          { keyId: 10, text: '测试2' },
-          { keyId: 31, text: '测试3' }
+          { keyId: '11', text: '第一教学楼' },
+          { keyId: '12', text: '第二教学楼' },
+          { keyId: '13', text: '第一实验楼(三教)' },
+          { keyId: '14', text: '第二实验楼(四教)' },
+          { keyId: '15', text: '图书馆' },
+          { keyId: '16', text: '食堂' },
+          { keyId: '17', text: '艺术楼' },
+          { keyId: '18', text: '体育馆' },
+          { keyId: '10', text: '校内' },
+          { keyId: 'F8E5900456734FD5B02D4980BDA682F2', text: '艺术楼副楼' },
+          { keyId: '2CE430AF4D78440CB5B13D36175B037C', text: '行政楼' }
         ]
       },
       params: {
         method: 'getKxJscx',
         time: '',
         idleTime: '',
+        xqid: '1',
         jxlid: '',
         classroomNumber: ''
       }
@@ -119,7 +132,7 @@ export default {
   },
   methods: {
     onConfirm1 (date) {
-      this.mydate.value = `${date.getUTCFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+      this.mydate.value = `${date.getUTCFullYear()}-${(date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1)}-${date.getDate()}`
       this.params.time = this.mydate.value
       this.mydate.showCalendar = false
     },
@@ -134,7 +147,7 @@ export default {
       this.params.jxlid = value.keyId
     },
     onSubmit () {
-      console.log(this.params)
+      this.$router.push({ name: '空教室详情', params: this.params })
     }
   }
 }
